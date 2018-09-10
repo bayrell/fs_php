@@ -1,0 +1,17 @@
+{
+	"name": "bayrell/fs",
+	"type": "library",
+	"description": "Bayrell File System",
+	"version": "0.5.0",
+	"authors": [
+		{
+			"name": "Ildar Bikmamatov",
+			"email": "support@bayrell.org"
+		}
+	],
+	"autoload": {
+		"psr-4": { "BayrellFileSystem\\": "" }
+	},
+	"require": {
+	}
+}
