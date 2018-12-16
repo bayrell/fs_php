@@ -20,11 +20,10 @@ namespace BayrellFileSystem;
 use Runtime\rtl;
 use Runtime\Map;
 use Runtime\Vector;
+use Runtime\IntrospectionInfo;
 use Runtime\ContextObject;
 use BayrellCommon\FileSystem\FileSystemInterface;
 class FileSystemProvider extends ContextObject implements FileSystemInterface{
-	public function getClassName(){return "BayrellFileSystem.FileSystemProvider";}
-	public static function getParentClassName(){return "Runtime.ContextObject";}
 	/**
 	 * Returns files and folders from directory
 	 * @param string basedir
@@ -139,4 +138,7 @@ class FileSystemProvider extends ContextObject implements FileSystemInterface{
 			mkdir($dirpath, 0755, true);
 		}
 	}
+	/* ======================= Class Init Functions ======================= */
+	public function getClassName(){return "BayrellFileSystem.FileSystemProvider";}
+	public static function getParentClassName(){return "Runtime.ContextObject";}
 }

@@ -20,14 +20,13 @@ namespace BayrellFileSystem;
 use Runtime\rtl;
 use Runtime\Map;
 use Runtime\Vector;
+use Runtime\IntrospectionInfo;
 use Runtime\CoreObject;
 use Runtime\ContextObject;
 use Runtime\Interfaces\ContextInterface;
 use Runtime\Interfaces\FactoryInterface;
 use BayrellFileSystem\FileSystemProvider;
 class FileSystemProviderFactory extends ContextObject implements FactoryInterface{
-	public function getClassName(){return "BayrellFileSystem.FileSystemProviderFactory";}
-	public static function getParentClassName(){return "Runtime.ContextObject";}
 	/**
 	 * Returns new Instance
 	 */
@@ -35,4 +34,7 @@ class FileSystemProviderFactory extends ContextObject implements FactoryInterfac
 		$obj = new FileSystemProvider($context);
 		return $obj;
 	}
+	/* ======================= Class Init Functions ======================= */
+	public function getClassName(){return "BayrellFileSystem.FileSystemProviderFactory";}
+	public static function getParentClassName(){return "Runtime.ContextObject";}
 }

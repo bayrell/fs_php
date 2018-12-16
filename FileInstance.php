@@ -20,10 +20,9 @@ namespace BayrellFileSystem;
 use Runtime\rtl;
 use Runtime\Map;
 use Runtime\Vector;
+use Runtime\IntrospectionInfo;
 use BayrellCommon\FileSystem\FileInterface;
 class FileInstance implements FileInterface{
-	public function getClassName(){return "BayrellFileSystem.FileInstance";}
-	public static function getParentClassName(){return "";}
 	/**
 	 * Returns stream
 	 */
@@ -39,4 +38,7 @@ class FileInstance implements FileInterface{
 	 */
 	function close(){
 	}
+	/* ======================= Class Init Functions ======================= */
+	public function getClassName(){return "BayrellFileSystem.FileInstance";}
+	public static function getParentClassName(){return "";}
 }

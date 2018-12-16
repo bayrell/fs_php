@@ -20,12 +20,11 @@ namespace BayrellFileSystem;
 use Runtime\rtl;
 use Runtime\Map;
 use Runtime\Vector;
+use Runtime\IntrospectionInfo;
 use Runtime\Interfaces\ContextInterface;
 use Runtime\Interfaces\ModuleDescriptionInterface;
 use BayrellFileSystem\FileSystemProviderFactory;
 class ModuleDescription implements ModuleDescriptionInterface{
-	public function getClassName(){return "BayrellFileSystem.ModuleDescription";}
-	public static function getParentClassName(){return "";}
 	/**
 	 * Returns module name
 	 * @return string
@@ -67,4 +66,7 @@ class ModuleDescription implements ModuleDescriptionInterface{
 	static function getRequiredModules($context){
 		return (new Map())->set("Runtime", ">=0.2 <1.0");
 	}
+	/* ======================= Class Init Functions ======================= */
+	public function getClassName(){return "BayrellFileSystem.ModuleDescription";}
+	public static function getParentClassName(){return "";}
 }
