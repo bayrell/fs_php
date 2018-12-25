@@ -2,7 +2,8 @@
 	"name": "bayrell/fs",
 	"type": "library",
 	"description": "Bayrell File System",
-	"version": "0.6.0",
+	"version": "0.6.2",
+	"license": "Apache-2.0",
 	"authors": [
 		{
 			"name": "Ildar Bikmamatov",

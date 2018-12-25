@@ -30,7 +30,7 @@ class FileSystemProviderFactory extends ContextObject implements FactoryInterfac
 	/**
 	 * Returns new Instance
 	 */
-	function newInstance($context){
+	function newInstance($context = null){
 		$obj = new FileSystemProvider($context);
 		return $obj;
 	}

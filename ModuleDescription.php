@@ -29,7 +29,7 @@ class ModuleDescription implements ModuleDescriptionInterface{
 	 * Returns module name
 	 * @return string
 	 */
-	static function getModuleName(){
+	static function getName(){
 		return "BayrellFileSystem";
 	}
 	/**
@@ -53,11 +53,10 @@ class ModuleDescription implements ModuleDescriptionInterface{
 		$context->registerProviderFactory("default:fs", new FileSystemProviderFactory());
 	}
 	/**
-	 * Returns description interfaces of the current module
-	 * @return Vector<string>
+	 * Called then context read config
+	 * @param Map<mixed> config
 	 */
-	static function getInterfaces(){
-		return (new Vector())->push("Runtime.Interfaces.ModuleDescriptionInterface");
+	static function onReadConfig($context, $config){
 	}
 	/**
 	 * Returns required modules

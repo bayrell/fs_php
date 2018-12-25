@@ -34,6 +34,8 @@ class FileSystemProvider extends ContextObject implements FileSystemInterface{
 		$arr = scandir($basedir, SCANDIR_SORT_ASCENDING);
 		$res = new Vector();
 		$res->_assignArr($arr);
+		$res->removeValue(".");
+		$res->removeValue("..");
 		return $res;
 	}
 	/**
@@ -44,7 +46,8 @@ class FileSystemProvider extends ContextObject implements FileSystemInterface{
 	function readDirectoryRecursive($basedir = ""){
 		$res = new Vector();
 		$arr = $this->getDirectoryListing($basedir);
-		$arr->each(function ($path) use (&$res){
+		$arr->each(function ($path) use (&$res, &$basedir){
+			$path = rtl::toString($basedir) . "/" . rtl::toString($path);
 			$res->push($path);
 			if ($this->isDir($path)){
 				$res->appendVector($this->getDirectoryListing($path));
@@ -60,7 +63,8 @@ class FileSystemProvider extends ContextObject implements FileSystemInterface{
 	function getFilesRecursive($basedir = ""){
 		$res = new Vector();
 		$arr = $this->getDirectoryListing($basedir);
-		$arr->each(function ($path) use (&$res){
+		$arr->each(function ($path) use (&$res, &$basedir){
+			$path = rtl::toString($basedir) . "/" . rtl::toString($path);
 			if ($this->isDir($path)){
 				$res->appendVector($this->getFilesRecursive($path));
 			}
@@ -104,6 +108,15 @@ class FileSystemProvider extends ContextObject implements FileSystemInterface{
 	 * @param string dirpath
 	 * @param boolean create_parent. Default is true
 	 */
+	function fileExists($filepath = ""){
+		
+		return file_exists($filepath);
+	}
+	/**
+	 * Make dir
+	 * @param string dirpath
+	 * @param boolean create_parent. Default is true
+	 */
 	function makeDir($dirpath = "", $create_parent = false){
 		
 		if (file_exists($dirpath)){
@@ -126,17 +139,6 @@ class FileSystemProvider extends ContextObject implements FileSystemInterface{
 	 */
 	function isFile($path){
 		return !$this->isDir($path);
-	}
-	/**
-	 * Make dir
-	 * @param string dirpath
-	 * @param boolean create_parent. Default is true
-	 */
-	function makeDir($dirpath = "", $create_parent = false){
-		
-		if (file_exists($dirpath)){
-			mkdir($dirpath, 0755, true);
-		}
 	}
 	/* ======================= Class Init Functions ======================= */
 	public function getClassName(){return "BayrellFileSystem.FileSystemProvider";}
