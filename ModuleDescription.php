@@ -17,10 +17,14 @@
  *  limitations under the License.
  */
 namespace BayrellFileSystem;
+use Runtime\rs;
 use Runtime\rtl;
 use Runtime\Map;
 use Runtime\Vector;
+use Runtime\Dict;
+use Runtime\Collection;
 use Runtime\IntrospectionInfo;
+use Runtime\UIStruct;
 use Runtime\Interfaces\ContextInterface;
 use Runtime\Interfaces\ModuleDescriptionInterface;
 use BayrellFileSystem\FileSystemProviderFactory;
@@ -37,7 +41,7 @@ class ModuleDescription implements ModuleDescriptionInterface{
 	 * @return string
 	 */
 	static function getModuleVersion(){
-		return "0.5.0";
+		return "0.7.1";
 	}
 	/**
 	 * Init context
@@ -67,5 +71,6 @@ class ModuleDescription implements ModuleDescriptionInterface{
 	}
 	/* ======================= Class Init Functions ======================= */
 	public function getClassName(){return "BayrellFileSystem.ModuleDescription";}
+	public static function getCurrentClassName(){return "BayrellFileSystem.ModuleDescription";}
 	public static function getParentClassName(){return "";}
 }

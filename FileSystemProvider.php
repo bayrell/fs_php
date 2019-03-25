@@ -17,10 +17,14 @@
  *  limitations under the License.
  */
 namespace BayrellFileSystem;
+use Runtime\rs;
 use Runtime\rtl;
 use Runtime\Map;
 use Runtime\Vector;
+use Runtime\Dict;
+use Runtime\Collection;
 use Runtime\IntrospectionInfo;
+use Runtime\UIStruct;
 use Runtime\ContextObject;
 use BayrellCommon\FileSystem\FileSystemInterface;
 class FileSystemProvider extends ContextObject implements FileSystemInterface{
@@ -142,5 +146,6 @@ class FileSystemProvider extends ContextObject implements FileSystemInterface{
 	}
 	/* ======================= Class Init Functions ======================= */
 	public function getClassName(){return "BayrellFileSystem.FileSystemProvider";}
+	public static function getCurrentClassName(){return "BayrellFileSystem.FileSystemProvider";}
 	public static function getParentClassName(){return "Runtime.ContextObject";}
 }

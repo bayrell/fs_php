@@ -17,10 +17,14 @@
  *  limitations under the License.
  */
 namespace BayrellFileSystem;
+use Runtime\rs;
 use Runtime\rtl;
 use Runtime\Map;
 use Runtime\Vector;
+use Runtime\Dict;
+use Runtime\Collection;
 use Runtime\IntrospectionInfo;
+use Runtime\UIStruct;
 use BayrellCommon\FileSystem\FileInterface;
 class FileInstance implements FileInterface{
 	/**
@@ -40,5 +44,6 @@ class FileInstance implements FileInterface{
 	}
 	/* ======================= Class Init Functions ======================= */
 	public function getClassName(){return "BayrellFileSystem.FileInstance";}
+	public static function getCurrentClassName(){return "BayrellFileSystem.FileInstance";}
 	public static function getParentClassName(){return "";}
 }
