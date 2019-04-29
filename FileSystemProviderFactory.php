@@ -42,4 +42,14 @@ class FileSystemProviderFactory extends ContextObject implements FactoryInterfac
 	public function getClassName(){return "BayrellFileSystem.FileSystemProviderFactory";}
 	public static function getCurrentClassName(){return "BayrellFileSystem.FileSystemProviderFactory";}
 	public static function getParentClassName(){return "Runtime.ContextObject";}
+	public static function getFieldsList($names, $flag=0){
+	}
+	public static function getFieldInfoByName($field_name){
+		return null;
+	}
+	public static function getMethodsList($names){
+	}
+	public static function getMethodInfoByName($method_name){
+		return null;
+	}
 }

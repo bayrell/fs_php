@@ -46,4 +46,14 @@ class FileInstance implements FileInterface{
 	public function getClassName(){return "BayrellFileSystem.FileInstance";}
 	public static function getCurrentClassName(){return "BayrellFileSystem.FileInstance";}
 	public static function getParentClassName(){return "";}
+	public static function getFieldsList($names, $flag=0){
+	}
+	public static function getFieldInfoByName($field_name){
+		return null;
+	}
+	public static function getMethodsList($names){
+	}
+	public static function getMethodInfoByName($method_name){
+		return null;
+	}
 }
